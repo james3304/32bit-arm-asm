@@ -22,13 +22,16 @@ moneyLost:
 main:
 	//prologue
     push {fp, lr}
-	add fp, sp, #12
+	add fp, sp, #20
 
-	mov r0, #0
-
+	mov r0, #1
 	str r0, [fp, #-4]	//first pick
-	str r1, [fp, #-8]	//second pick
-	str r2, [fp, #-12]	//thrid pick
+
+	mov r0, #5
+	str r0, [fp, #-8]	//second pick
+
+	mov r0, #3
+	str r0, [fp, #-12]	//thrid pick
 
 	sub r5, fp, 12		//store top of array in r5
 
@@ -37,7 +40,6 @@ main:
 	bl	srand
 	
 	bl gameLogic 	// returns fp -12 in r1, which is the top of the array
-	
 	mov r7, r0
 	mov r8, r1
 	mov r9, r2
@@ -64,7 +66,7 @@ main:
 	ldr r0, =moneyLost
 	bl printf
 
-	//epilogue
-	sub fp, sp, #12
+	//prologue
+	sub fp, sp, #20
 	pop	{fp, lr}
     bx  lr

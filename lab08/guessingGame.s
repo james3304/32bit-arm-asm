@@ -43,10 +43,10 @@ main:
     bl getRandom
     mov  r4, r0     @r4, <- #0, r4 is
 
-    //output the 'cheat'
-    mov r1, r4                  @'the prize'
-    ldr r0, =thePrizeMsg
-    bl printf
+    @ //output the 'cheat'
+    @ mov r1, r4                  @'the prize'
+    @ ldr r0, =thePrizeMsg
+    @ bl printf
 
 topOfLoop:
     //output the prompt
@@ -96,7 +96,6 @@ validGuess:
     bl printf
 
 epilogue:
-
     @epilogue
     add sp, sp, #4
 

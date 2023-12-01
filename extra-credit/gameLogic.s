@@ -47,5 +47,6 @@ endOfLoop:
 	mov r1, r8			//pass loses in r1
 	mov r2, r9			//pass total in r2
     
+	//epilogue
     pop	{r4, r5, r6, r7, r8, r9, fp, lr}
 	bx lr

@@ -37,7 +37,7 @@ x2) a repetition algorithm to play the 10,000 games
 x3) a function that simulates random number generation ( getRandom )
 x4) a function to play a game ( playGame )
 x5) a running count of the number of games won
-6) an output of:
+x6) an output of:
 	the number of games played
 	the number of games won
 	the amount of money won ( or lost ) ($1 for each game lost, $499 dollars for each game won )
@@ -45,11 +45,3 @@ x5) a running count of the number of games won
 Save and submit all of your ARM32 assembler source code to the dropbox.
 Include a few screen captures for proof your application running.
 Answer the question - Out of 10,000 games, did you win or lose money ?
-
-
-do i even need this?
-
-	//call srand(time(0))
-    @ mov r0, #0
-	@ bl	time        // return time in seconds in r0, so leave in r0 for call to srand()
-	@ bl	srand		// basically don't touch this
