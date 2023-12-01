@@ -15,6 +15,7 @@ moneyWon:
 
 moneyLost:
     .asciz "Money lost: $%d\n Not worth it."
+	
 	.text
 	.global	main
 	.type	main, %function
@@ -22,22 +23,22 @@ moneyLost:
 main:
 	//prologue
     push {fp, lr}
-	add fp, sp, #12
+	add fp, sp, #16
 
-	mov r0, #0
+	bl getNumbers
 
-	str r0, [fp, #-4]	//first pick
-	str r1, [fp, #-8]	//second pick
-	str r2, [fp, #-12]	//thrid pick
-
-	sub r5, fp, 12		//store top of array in r5
+	str r0, [fp, #-8]
+	str r1, [fp, #-12]
+	str r2, [fp, #-16]
+	
+	sub r5, fp, #16     //passes top of array (-16) with guesses in r5
 
 	mov r0, #0		//seed for time function
 	bl	time        //make sure mov r0, #0 comes before time
 	bl	srand
 	
 	bl gameLogic 	// returns fp -12 in r1, which is the top of the array
-	
+
 	mov r7, r0
 	mov r8, r1
 	mov r9, r2
@@ -65,6 +66,6 @@ main:
 	bl printf
 
 	//epilogue
-	sub fp, sp, #12
+	sub fp, sp, #16
 	pop	{fp, lr}
     bx  lr

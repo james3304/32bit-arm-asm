@@ -6,7 +6,7 @@ thePrizeMsg:
     .asciz "prize = %d\012"  // %d is the first parameter
 
 guessPrompt:
-    .asciz "\nguess between 1 and 20 (%d of %d) ?"
+    .asciz "guess between 1 and 20 (%d of %d) ?"
 
 inputFormat:
     .asciz "%d"
@@ -22,10 +22,7 @@ tooHigh:
 youLoseMsg:
     .asciz "you lose. the number was %d"
 youWinMsg:
-    .asciz "congratulations, you win!"  // %d is the first parameter
-
-outOfRange:
-    .asciz "number must be between %d and %d"
+    .asciz "congratulations, you win!"  // %d is the first parameter    
 
     .text
     .global main
@@ -43,10 +40,10 @@ main:
     bl getRandom
     mov  r4, r0     @r4, <- #0, r4 is
 
-    @ //output the 'cheat'
-    @ mov r1, r4                  @'the prize'
-    @ ldr r0, =thePrizeMsg
-    @ bl printf
+    //output the 'cheat'
+    mov r1, r4                  @'the prize'
+    ldr r0, =thePrizeMsg
+    bl printf
 
 topOfLoop:
     //output the prompt
@@ -62,21 +59,9 @@ topOfLoop:
 
     ldr r5, [fp, #-8]
 
-    //validate user input
-    cmp r5, #1
-    blt invalidGuess
-    cmp r5, #20
-    bgt invalidGuess
-    b validGuess
-
-invalidGuess:
-    mov r2, #20
-    mov r1, #1
-    ldr r0, =outOfRange
+    mov r1, r5
+    ldr r0, =debugScanf
     bl printf
-    b topOfLoop
-
-validGuess:
     
     //output correct prompt of too high, too low, or correct
     cmp r5, r4          //compare prize r5 with guess r4
@@ -96,6 +81,7 @@ validGuess:
     bl printf
 
 epilogue:
+
     @epilogue
     add sp, sp, #4
 

@@ -19,11 +19,11 @@ That should be enough games to remove 'chance occurrences".
 
 So, for each run of the simulated game:
 
-1) Prompt for and extract 3 'picks'. Be sure to validate that the inputs picks are within the range of 0 .. 9. 
+x1) Prompt for and extract 3 'picks'. Be sure to validate that the inputs picks are within the range of 0 .. 9. 
 Note: Assume only digits are entered (ie: assume no other characters ).
-2) Generate 3 random numbers (getRandom) in the range of 0-9 for each game. 
-3) Determine if the player won or lost that game ( exactly matched all three numbers - in order ).
-4) Update a running count of the number of games won
+x2) Generate 3 random numbers (getRandom) in the range of 0-9 for each game. 
+x3) Determine if the player won or lost that game ( exactly matched all three numbers - in order ).
+x4) Update a running count of the number of games won
 
 After all 10,000 games have been played, output how many games were won and lost, and how much money you won ( or lost )
 
