@@ -1,0 +1,20 @@
+In the sum nine example section 13.2 of the Plantz website 
+(https://bob.cs.sonoma.edu/IntroCompOrg-RPi/sec-arg-access.html) 
+here is a sumNine example that demonstrates the passing of 9 
+parameters from a 'caller' function to a 'called' function. 
+A simplied version is attached to the dropbox. 
+There are 2 files needed :
+
+callSumNine.s
+sumNine.s
+
+compile with :
+
+gcc -g callSumNine.s sumNine.s -o callSumNine
+
+For this lab, you are to complete the attached worksheet. 
+While completeing the worksheet, notice how the none parameters 
+are stored and how and where the nine parameters are passed to 
+the called function. 
+
+ 

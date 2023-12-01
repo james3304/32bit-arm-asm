@@ -1,0 +1,55 @@
+Extra Credit Project - Should you play the Texas Lotto Pick 3?
+
+The Texas lottery has a 'game' called "Pick 3". In this 'game', there are 10 balls in each of 3 tubes. 
+The balls are numbered 0 thru 9. For each game, a lottery player picks three numbers, and then a single ball 
+is randomly selected from each tube. A player wins if the single numbered balls from each of the three tubes 
+matches the numbers the player selected - in order.
+
+We are simulating "Exact Order", so if the numbers match, in order, the Player wins $500 minus the 1.00 cost for the ticket.
+
+For example, the player picks 2 - 3 - 0. If the 3 randomly selected numbers are 2 - 3 - 0, the plays wins $500.00 minus the 
+cost of the ticket of $1.00. If the randomly selected numbers are any other combination, the ticket loses.
+
+Here is a link to the Texas lottery Pick3 game. https://www.youtube.com/watch?v=YncfWVBsvz0&t=4s
+
+Be sure to watch the video !!!
+
+For each 'game', you are to run a simulation of the Texas "Pick 3" game, in which you will play 10,000 games. 
+That should be enough games to remove 'chance occurrences". 
+
+So, for each run of the simulated game:
+
+1) Prompt for and extract 3 'picks'. Be sure to validate that the inputs picks are within the range of 0 .. 9. 
+Note: Assume only digits are entered (ie: assume no other characters ).
+2) Generate 3 random numbers (getRandom) in the range of 0-9 for each game. 
+3) Determine if the player won or lost that game ( exactly matched all three numbers - in order ).
+4) Update a running count of the number of games won
+
+After all 10,000 games have been played, output how many games were won and lost, and how much money you won ( or lost )
+
+Remember: It cost $1 dollar to play each game, and for each game where the picks match the random 'balls' exactly, you win $500.00. 
+Programming Requirements:
+
+Your program is to include at least the following:
+
+1) a function to validate user picks
+x2) a repetition algorithm to play the 10,000 games
+x3) a function that simulates random number generation ( getRandom )
+x4) a function to play a game ( playGame )
+x5) a running count of the number of games won
+6) an output of:
+	the number of games played
+	the number of games won
+	the amount of money won ( or lost ) ($1 for each game lost, $499 dollars for each game won )
+ 
+Save and submit all of your ARM32 assembler source code to the dropbox.
+Include a few screen captures for proof your application running.
+Answer the question - Out of 10,000 games, did you win or lose money ?
+
+
+do i even need this?
+
+	//call srand(time(0))
+    @ mov r0, #0
+	@ bl	time        // return time in seconds in r0, so leave in r0 for call to srand()
+	@ bl	srand		// basically don't touch this

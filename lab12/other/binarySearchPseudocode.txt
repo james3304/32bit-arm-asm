@@ -1,0 +1,29 @@
+
+
+int binarySearch(char list[], int length, char item[]) {
+    int first = 0;
+    int last = length - 1;
+    int mid;
+    int found = 0;
+    int result = -1;
+
+    while (first <= last && !found) {
+        mid = (first + last) / 2;
+    
+        result = strcmp(list[mid], item);
+
+        if (result == 0) {
+            found = true;
+        else if (result > 0)
+            last = mid - 1;
+        } else 
+            first = mid + 1;
+        }
+    }
+    
+    if (found) {
+        return mid;
+    } else {
+        return -1;
+    }
+}

@@ -1,0 +1,33 @@
+// Note: adapted from Plantz book Listing 14.1.2.
+// Note: https://bob.cs.sonoma.edu/IntroCompOrg-RPi/sec-logic-instr.html
+
+// input parameter
+
+r0 <- address of first character of array of characters, array is NUL terminated ( 0 )
+
+mov r4, #0
+while {
+
+	load a byte from array ( load a char ) -> ldrb
+	
+	if is NULL char
+		then All Done
+	
+	if < 'A'		cmp r0, 'A'			
+		skip		blt endOfLoop
+		
+   if > 'Z'			cmp r0,'Z'
+		skip		blt endOfLoop
+		
+   apply mask to ASCII bit pattern ( orr r0, r0, 0x20 ), set bit 6 to a 1
+   
+   end while
+
+   endOfLoop
+   add r4, r4, #1
+	b topOfLoop
+}
+
+load a byte: ldrb r0, [addr ]
+compare to null: cmp r0, 0x0
+branch if equal to 
