@@ -7,11 +7,13 @@
 	
 toLower:
 	push {r4, fp, lr}
-	mov r4, r0
+	add fp, sp, #12
+	mov r4, r0		//address of first letter 
 
 topOfLoop:
-	ldrb r0, [r5]
+	ldrb r0, [r4]
 	cmp r0, 0x0
+	beq endOfLoop
 
 	cmp r0, 'A'
 	blt middleLoop
@@ -20,10 +22,12 @@ topOfLoop:
 	bgt middleLoop
 
 	orr r0, r0, 0x20
+	str r0, [r4]
 
 middleLoop:
 	add r4, r4, #1
-	b topOfLoop
+	bne topOfLoop
 
 endOfLoop:
+	sub fp, sp, #12
 	pop {r4, fp, lr}

@@ -23,7 +23,8 @@ moneyLost:
 main:
 	//prologue
     push {fp, lr}
-	add fp, sp, #16
+	add fp, sp, #4
+	sub sp, sp, #16
 
 	bl getNumbers
 
@@ -66,6 +67,6 @@ main:
 	bl printf
 
 	//epilogue
-	sub fp, sp, #16
+	add sp, sp, #16
 	pop	{fp, lr}
-    bx  lr
+	bx lr
