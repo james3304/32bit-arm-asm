@@ -4,7 +4,6 @@
 	.global	toLower
 	.type	toLower, %function
 
-	
 toLower:
 	push {r4, fp, lr}
 	add fp, sp, #12
@@ -22,7 +21,7 @@ topOfLoop:
 	bgt middleLoop
 
 	orr r0, r0, 0x20
-	str r0, [r4]
+	strb r0, [r4]
 
 middleLoop:
 	add r4, r4, #1

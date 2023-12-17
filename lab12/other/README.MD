@@ -1,4 +1,4 @@
-COSC2425 : Lab12 - Array Searching
+<!-- COSC2425 : Lab12 - Array Searching
 
 For this - the FINAL lab - you will be building a array search application. one of the most important and time consuming operations computer perform are searches. So, this is a very important topic to study. 
 
@@ -6,7 +6,7 @@ For this application, we will be writing a binary search algorithm - that is fas
 
 We'll accomplish this by doing most of the search/selection code on the CPU, thus avoiding thousands of trips up and down the address / data busses. In other words, our code well be better than c compiler produced code.  
 
-Specifically:
+Specifically: -->
 
 The lab includes a list of 5,195 5 character words used as a dictionary for the popular WORDL game. The list of words - found in the file wordlSorted.txt is pre-sorted, which is needed to perform a proper binary search of a target word in the lists of words.
 
