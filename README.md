@@ -8,6 +8,7 @@ cd [local lab directory]
 make
 ./[lab main file]
   i.e. ./simpleAdd
+  (from lab03)
 
 debugging
 gdb [lab name]
